@@ -20,4 +20,3 @@ def degree(radius: float, time: float, acceleration: float, velocity: float = 0)
     square = velocity + (acceleration * time ** 2) / 2
     length = 2 * pi * radius
     return round((square % length) / length + all_degree, 2)
- 
