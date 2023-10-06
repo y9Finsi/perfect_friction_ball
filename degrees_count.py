@@ -15,7 +15,13 @@ def degree(radius: float, time: float, acceleration: float, velocity: float = 0)
 
     Returns:
         float: Position in degrees along the circumference of the circle.
+    Raises:
+        ValueError: if args are wrong.
     """
+    if radius <= 0:
+        raise ValueError('Radius of the body must be positive.')
+    if time < 0:
+        raise ValueError('Time cannot go backwards.')
     all_degree = 360
     square = velocity + (acceleration * time ** 2) / 2
     length = 2 * pi * radius
